@@ -14,12 +14,8 @@ import {
   ActivityIndicator
 } from 'react-native'
 
-const { width } = Dimensions.get('window')
+const { width, height } = Dimensions.get('window')
 let { height } = Dimensions.get('window')
-
-this.state = {
-  height : height - 76
-}
 
 /**
  * Default styles
@@ -167,6 +163,13 @@ export default class extends Component {
    */
   autoplayTimer = null
   loopJumpTimer = null
+
+  /**
+   * 20170327 add _ setting height when view have toppadding
+   */
+  componentWillMount() {
+    this.setState({height : this.state.heigh - 76})
+  }
 
   componentWillReceiveProps (nextProps) {
     const sizeChanged = (nextProps.width || width) !== this.state.width ||
@@ -592,7 +595,7 @@ export default class extends Component {
 
     let pages = []
     /** 20170327 add */
-    //const height = state.height - 76
+    //const height = state.height - 72
     const pageStyle = [{width: state.width, height}, styles.slide]    
     const pageStyleLoading = {
       width: this.state.width,
@@ -633,7 +636,7 @@ export default class extends Component {
     return (
       <View style={[styles.container, {
         width: state.width,
-        height
+        height: state.height
       }]}>
         {this.renderScrollView(pages)}
         {props.showsPagination && (props.renderPagination
