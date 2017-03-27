@@ -589,10 +589,10 @@ export default class extends Component {
     let pages = []
     /** 20170327 add */
     const height = state.height - 72
-    const pageStyle = [{width: state.width, height:state.height}, styles.slide]    
+    const pageStyle = [{width: state.width, height}, styles.slide]    
     const pageStyleLoading = {
       width: this.state.width,
-      height: height,
+      height,
       justifyContent: 'center',
       alignItems: 'center'
     }
@@ -629,7 +629,7 @@ export default class extends Component {
     return (
       <View style={[styles.container, {
         width: state.width,
-        height: state.height
+        height
       }]}>
         {this.renderScrollView(pages)}
         {props.showsPagination && (props.renderPagination
