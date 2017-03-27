@@ -20,7 +20,7 @@ var styles = {
     left: 0
   },
   slide: {
-    flex: 1,
+    flex: 300,
     justifyContent: 'center',
     alignItems: 'center'
   },
