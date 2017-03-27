@@ -17,6 +17,16 @@ import {
 const { width, height } = Dimensions.get('window')
 
 /**
+ * setting height (test)
+ */
+constructor(props) {
+		super(props);		
+		this.state = {
+			height : height-20
+		};
+	}
+
+/**
  * Default styles
  * @type {StyleSheetPropType}
  */
