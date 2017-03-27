@@ -18,7 +18,7 @@ const { width } = Dimensions.get('window')
 let { height } = Dimensions.get('window')
 
 this.state = {
-  height : this.state.height - 76
+  height : height - 76
 }
 
 /**
