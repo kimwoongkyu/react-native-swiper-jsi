@@ -168,7 +168,9 @@ export default class extends Component {
    * 20170327 add _ setting height when view have toppadding
    */
   componentWillMount() {
+    console.log('this original height ::: ', this.state.height)
     this.setState({height : this.state.heigh - 76})
+    console.log('this cal height ::: ', this.state.height)
   }
 
   componentWillReceiveProps (nextProps) {
@@ -541,6 +543,8 @@ export default class extends Component {
   }
 
   renderButtons = () => {
+    console.log('BUTTON :::: this original height ::: ', this.state.height)
+    console.log('BUTTON ::: this cal height ::: ', this.state.height)
     return (
       <View pointerEvents='box-none' style={[styles.buttonWrapper, {
         width: this.state.width,
@@ -595,6 +599,8 @@ export default class extends Component {
 
     let pages = []
     /** 20170327 add */
+    console.log('RENDER ::::: this original height ::: ', this.state.height)
+    console.log('RENDER ::::: this cal height ::: ', this.state.height)
     //const height = state.height - 72
     const pageStyle = [{width: state.width, height:state.height}, styles.slide]    
     const pageStyleLoading = {
