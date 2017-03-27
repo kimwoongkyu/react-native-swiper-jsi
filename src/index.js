@@ -17,16 +17,6 @@ import {
 const { width, height } = Dimensions.get('window')
 
 /**
- * setting height (test)
- */
-constructor(props){
-		super(props)		
-		this.state = {
-			height : height-20
-		}
-	}
-
-/**
  * Default styles
  * @type {StyleSheetPropType}
  */
@@ -597,8 +587,8 @@ export default class extends Component {
 
     let pages = []
 
-    const pageStyle = [{width: state.width, height: state.height}, styles.slide]
-    console.log('20170327 height ;:::::',height)
+    const pageStyle = [{width: state.width, height: state.height-20}, styles.slide]
+    console.log('20170327 height ;:::::',state.height,'modified height',height)
     const pageStyleLoading = {
       width: this.state.width,
       height: this.state.height,
