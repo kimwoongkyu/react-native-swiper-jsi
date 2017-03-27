@@ -596,7 +596,7 @@ export default class extends Component {
     let pages = []
     /** 20170327 add */
     //const height = state.height - 72
-    const pageStyle = [{width: state.width, height}, styles.slide]    
+    const pageStyle = [{width: state.width, height:state.height}, styles.slide]    
     const pageStyleLoading = {
       width: this.state.width,
       height: this.state.height,
