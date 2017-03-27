@@ -19,11 +19,11 @@ const { width, height } = Dimensions.get('window')
 /**
  * setting height (test)
  */
-constructor(props) {
-		super(props);		
+constructor(props){
+		super(props)		
 		this.state = {
 			height : height-20
-		};
+		}
 	}
 
 /**
@@ -185,7 +185,6 @@ export default class extends Component {
   }
 
   componentWillUnmount () {
-    console.log('test!!!!성공???')
     this.autoplayTimer && clearTimeout(this.autoplayTimer)
     this.loopJumpTimer && clearTimeout(this.loopJumpTimer)
   }
