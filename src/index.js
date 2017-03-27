@@ -592,7 +592,7 @@ export default class extends Component {
     const pageStyle = [{width: state.width, height:state.height}, styles.slide]    
     const pageStyleLoading = {
       width: this.state.width,
-      height: this.state.height,
+      height: height,
       justifyContent: 'center',
       alignItems: 'center'
     }
