@@ -14,7 +14,8 @@ import {
   ActivityIndicator
 } from 'react-native'
 
-const { width, height } = Dimensions.get('window')
+const { width } = Dimensions.get('window')
+let { height } = Dimensions.get('window')
 
 this.state = {
   height : state.height - 76
