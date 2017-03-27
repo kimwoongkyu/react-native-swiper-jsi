@@ -26,7 +26,7 @@ var styles = {
   },
   photo: {
     width,
-    height,
+    height : height-100,
     flex: 1
   },
   text: {
