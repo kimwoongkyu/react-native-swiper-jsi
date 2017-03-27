@@ -16,6 +16,10 @@ import {
 
 const { width, height } = Dimensions.get('window')
 
+this.state = {
+  height : state.height - 76
+}
+
 /**
  * Default styles
  * @type {StyleSheetPropType}
@@ -587,7 +591,7 @@ export default class extends Component {
 
     let pages = []
     /** 20170327 add */
-    const height = state.height - 76
+    //const height = state.height - 76
     const pageStyle = [{width: state.width, height}, styles.slide]    
     const pageStyleLoading = {
       width: this.state.width,
