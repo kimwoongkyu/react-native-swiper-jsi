@@ -586,9 +586,9 @@ export default class extends Component {
     const loopVal = loop ? 1 : 0
 
     let pages = []
-    const height = state.height - 20
+    /** 20170327 add */
+    const height = state.height - 72
     const pageStyle = [{width: state.width, height}, styles.slide]    
-    console.log('20170327 height ;:::::',state.height,'modified height',height)
     const pageStyleLoading = {
       width: this.state.width,
       height: this.state.height,
