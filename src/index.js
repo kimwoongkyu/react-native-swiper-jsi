@@ -185,6 +185,7 @@ export default class extends Component {
   }
 
   componentWillUnmount () {
+    console.log('test!!!!성공???')
     this.autoplayTimer && clearTimeout(this.autoplayTimer)
     this.loopJumpTimer && clearTimeout(this.loopJumpTimer)
   }
