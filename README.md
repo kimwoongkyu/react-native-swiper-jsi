@@ -203,6 +203,7 @@ AppRegistry.registerComponent('myproject', () => swiper);
 | dotColor | - | `string` | Allow custom the active-dot element. |
 | activeDotColor | - | `string` | Allow custom the active-dot element. |
 | activeDotStyle | - | `object` | Allow custom the active-dot element. |
+| indicatorType | - | 'string' | Allow custom the indicator element. |
 
 #### Autoplay
 
