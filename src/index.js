@@ -123,7 +123,11 @@ export default class extends Component {
     dotStyle: PropTypes.object,
     activeDotStyle: PropTypes.object,
     dotColor: PropTypes.string,
-    activeDotColor: PropTypes.string
+    activeDotColor: PropTypes.string,
+    /**
+     * indicator type : default dot
+     */
+    indicatorType: PropTypes.string,
   }
 
   /**
@@ -455,6 +459,45 @@ export default class extends Component {
      // By default, dots only show when `total` >= 2
     if (this.state.total <= 1) return null
 
+    let indicatorContents = null
+
+    const indicatorType = this.props.indicatorType || 'dot'
+
+    if('dot' === indicatorType){
+      let dots = []
+      const ActiveDot = this.props.activeDot || <View style={[{
+        backgroundColor: this.props.activeDotColor || '#007aff',
+        width: 8,
+        height: 8,
+        borderRadius: 4,
+        marginLeft: 3,
+        marginRight: 3,
+        marginTop: 3,
+        marginBottom: 3
+      }, this.props.activeDotStyle]} />
+      const Dot = this.props.dot || <View style={[{
+        backgroundColor: this.props.dotColor || 'rgba(0,0,0,.2)',
+        width: 8,
+        height: 8,
+        borderRadius: 4,
+        marginLeft: 3,
+        marginRight: 3,
+        marginTop: 3,
+        marginBottom: 3
+      }, this.props.dotStyle ]} />
+      for (let i = 0; i < this.state.total; i++) {
+        dots.push(i === this.state.index
+          ? React.cloneElement(ActiveDot, {key: i})
+          : React.cloneElement(Dot, {key: i})
+        )
+      }
+      indicatorContents = dots
+    }else if('number' === indicatorType){  
+      const index = this.state.index + 1
+      indicatorContents = <Text>{index} / {this.state.total}</Text>
+    }
+
+/*
     let dots = []
     const ActiveDot = this.props.activeDot || <View style={[{
       backgroundColor: this.props.activeDotColor || '#007aff',
@@ -482,10 +525,10 @@ export default class extends Component {
         : React.cloneElement(Dot, {key: i})
       )
     }
-
+*/
     return (
       <View pointerEvents='none' style={[styles['pagination_' + this.state.dir], this.props.paginationStyle]}>
-        {dots}
+        {indicatorContents}
       </View>
     )
   }
@@ -534,9 +577,6 @@ export default class extends Component {
   }
 
   renderButtons = (height) => {
-    /**
-     * 20170329 add parameter : height
-     */
       return (
       <View pointerEvents='box-none' style={[styles.buttonWrapper , {
         width: this.state.width,
@@ -590,8 +630,12 @@ export default class extends Component {
     const loopVal = loop ? 1 : 0
 
     let pages = []
-    /** 20170327 add */
-    const height = state.height - 72
+    /**
+     * 20170327 add 
+     * when you want to use headerview, 
+     * const height = state.height - headerview`s height
+     */
+    const height = state.height
     const pageStyle = [{width: state.width, height}, styles.slide]    
     const pageStyleLoading = {
       width: this.state.width,
