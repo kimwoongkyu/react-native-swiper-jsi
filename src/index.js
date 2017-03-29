@@ -534,9 +534,10 @@ export default class extends Component {
   }
 
   renderButtons = () => {
+    
 
     console.log('RENDER BUTTON ::::: WIDTH :::: ',this.state.width,' :::: HEIGHT::::::: ',this.state.height)
-    console.log('RENDER BUTTON PROPS VALUE CHECK ::::: ',this.props.width , ' :::::HEIGHT:::::: ',this.prop.height )
+    console.log('RENDER BUTTON PROPS VALUE CHECK ::::: ',this.props )
       return (
       <View pointerEvents='box-none' style={[ , {
         width: this.state.width,
