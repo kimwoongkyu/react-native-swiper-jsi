@@ -533,12 +533,13 @@ export default class extends Component {
     )
   }
 
-  renderButtons = () => {
+  renderButtons = (height) => {
+    console.log('THIS IS RENDER BUTTON :::: PARAMETER HEIGHT', height)
     
       return (
       <View pointerEvents='box-none' style={[styles.buttonWrapper , {
         width: this.state.width,
-        height: this.state.height
+        height: height
       }, this.props.buttonWrapperStyle]}>
         {this.renderPrevButton()}
         {this.renderNextButton()}
@@ -637,7 +638,7 @@ export default class extends Component {
           ? this.props.renderPagination(state.index, state.total, this)
           : this.renderPagination())}
         {this.renderTitle()}
-        {this.props.showsButtons && this.renderButtons()}
+        {this.props.showsButtons && this.renderButtons(height)}
       </View>
     )
   }
