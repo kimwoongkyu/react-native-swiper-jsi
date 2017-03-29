@@ -638,7 +638,7 @@ export default class extends Component {
           ? this.props.renderPagination(state.index, state.total, this)
           : this.renderPagination())}
         {this.renderTitle()}
-        {this.props.showsButtons && this.renderButtons(height)}
+        {this.props.showsButtons && this.renderButtons(state.height)}
       </View>
     )
   }
