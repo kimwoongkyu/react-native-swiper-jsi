@@ -534,6 +534,9 @@ export default class extends Component {
   }
 
   renderButtons = (height) => {
+    /**
+     * 20170329 add parameter : height
+     */
       return (
       <View pointerEvents='box-none' style={[styles.buttonWrapper , {
         width: this.state.width,
