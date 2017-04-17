@@ -37,7 +37,7 @@ const styles = {
 
   pagination_x: {
     position: 'absolute',
-    bottom: 25,
+    bottom: 0,
     left: 0,
     right: 0,
     flexDirection: 'row',
@@ -78,7 +78,7 @@ const styles = {
     top: 0,
     left: 0,
     flex: 1,
-    paddingHorizontal: 10,
+    paddingHorizontal: 16,
     paddingVertical: 10,
     justifyContent: 'space-between',
     alignItems: 'center'
