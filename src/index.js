@@ -10,10 +10,10 @@ import {
   ScrollView,
   Dimensions,
   TouchableOpacity,
-  ViewPagerAndroid,
   Platform,
   ActivityIndicator
 } from 'react-native'
+import ViewPager from "@react-native-community/viewpager";
 
 const { width ,height } = Dimensions.get('window')
 
@@ -605,13 +605,13 @@ export default class extends Component {
        )
     }
     return (
-      <ViewPagerAndroid ref='scrollView'
+      <ViewPager ref='scrollView'
         {...this.props}
         initialPage={this.props.loop ? this.state.index + 1 : this.state.index}
         onPageSelected={this.onScrollEnd}
         style={{flex: 1}}>
         {pages}
-      </ViewPagerAndroid>
+      </ViewPager>
     )
   }
 
